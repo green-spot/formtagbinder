@@ -1,0 +1,19 @@
+{
+  "name": "green-spot/formtagbinder",
+  "description": "",
+  "keywords": [],
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/green-spot/formtagbinder",
+  "authors": [
+    {
+      "name": "green spot",
+      "email": "in.green.spot@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "files": ["FormTagBinder.php"]
+    }
+  }
+}
