@@ -12,8 +12,6 @@
     }
   ],
   "autoload": {
-    "psr-4": {
-      "files": ["FormTagBinder.php"]
-    }
+    "files": ["FormTagBinder.php"]
   }
 }
