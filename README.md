@@ -1,3 +1,7 @@
+```shellscript
+$ composer require green-spot/formtagbinder
+```
+
 ```php
 $binder = new FormTagBinder\FormTagBinder();
 
