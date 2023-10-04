@@ -16,13 +16,13 @@ echo $binder->email("email", ["required", "placeholder" => "info@example.com"]);
 foreach($binder->checkboxes(["a", "b", "c"], "categories") as $l => $cb){
   echo "<label>{$cb} {$l}</label>";
 }
-// <label><input type="checkbox" name="categories[]" value="a">
-// <label><input type="checkbox" name="categories[]" value="b">
-// <label><input type="checkbox" name="categories[]" value="c">
+// <label><input type="checkbox" name="categories[]" value="a"> a</label>
+// <label><input type="checkbox" name="categories[]" value="b"> b</label>
+// <label><input type="checkbox" name="categories[]" value="c"> c</label>
 
 
 echo $binder->textarea("content");
-// <textarea name="content"></content>
+// <textarea name="content"></textarea>
 ```
 
 Bind post data
