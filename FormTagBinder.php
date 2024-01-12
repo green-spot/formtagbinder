@@ -10,7 +10,13 @@ class FormTagBinder {
   }
 
   private function el($key, $default=null){
-    return isset($this->data[$key]) ? $this->data[$key] : $default;
+    if(is_array($this->data)){
+      return isset($this->data[$key]) ? $this->data[$key] : $default;
+    }else if(is_object($this->data)){
+      return isset($this->data->$key) ? $this->data->$key : $default;
+    }
+
+    return false;
   }
 
   public function input($type, $name, $props=[]){
