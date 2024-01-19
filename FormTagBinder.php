@@ -113,12 +113,14 @@ class FormTagBinder {
 
     $ret = [];
 
+    $i = 1;
     foreach($dataset as $label => $v){
       $v = htmlspecialchars($v);
       if(is_int($label)) $label = $v;
       $checked = $v === $val ? " checked" : "";
 
-      $ret[$label] = "<input type=\"radio\" id=\"input-{$name}\" name=\"{$name}\" value=\"{$v}\"{$checked}>";
+      $ret[$label] = "<input type=\"radio\" id=\"input-{$name}-{$i}\" name=\"{$name}\" value=\"{$v}\"{$checked}>";
+      $i++
     }
 
     return $ret;
@@ -128,13 +130,14 @@ class FormTagBinder {
     $vals = $this->el($name, []);
 
     $ret = [];
-
+    $i = 1;
     foreach($dataset as $label => $v){
       $v = htmlspecialchars($v);
       if(is_int($label)) $label = $v;
       $checked = in_array($v, $vals) ? " checked" : "";
 
-      $ret[$label] = "<input type=\"checkbox\" id=\"input-{$name}\" name=\"{$name}[]\" value=\"{$v}\"{$checked}>";
+      $ret[$label] = "<input type=\"checkbox\" id=\"input-{$name}-{$i}\" name=\"{$name}[]\" value=\"{$v}\"{$checked}>";
+      $i++
     }
 
     return $ret;
