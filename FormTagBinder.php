@@ -23,7 +23,7 @@ class FormTagBinder {
     $val = htmlspecialchars($this->el($name, ""));
     $props_string = $this->propsString($props);
 
-    return "<input type=\"{$type}\" name=\"{$name}\" value=\"{$val}\"{$props_string}>";
+    return "<input type=\"{$type}\" id=\"input-{$name}\" name=\"{$name}\" value=\"{$val}\"{$props_string}>";
   }
 
   public function text($name, $props=[]){
@@ -90,7 +90,7 @@ class FormTagBinder {
     $val = htmlspecialchars($this->el($name, ""));
     $props_string = $this->propsString($props);
 
-    return "<textarea name=\"{$name}\"{$props_string}>{$val}</textarea>";
+    return "<textarea id=\"input-{$name}\" name=\"{$name}\"{$props_string}>{$val}</textarea>";
   }
 
   public function select($dataset, $name, $props=[]){
@@ -103,7 +103,7 @@ class FormTagBinder {
       return "<option value=\"{$v}\"{$selected}>{$label}</option>";
     }, array_keys($dataset), array_values($dataset)));
 
-    return "<select name=\"{$name}\"{$props_string}>{$options}</select>";
+    return "<select id=\"input-{$name}\" name=\"{$name}\"{$props_string}>{$options}</select>";
   }
 
   public function radios($dataset, $name){
@@ -118,7 +118,7 @@ class FormTagBinder {
       if(is_int($label)) $label = $v;
       $checked = $v === $val ? " checked" : "";
 
-      $ret[$label] = "<input type=\"radio\" name=\"{$name}\" value=\"{$v}\"{$checked}>";
+      $ret[$label] = "<input type=\"radio\" id=\"input-{$name}\" name=\"{$name}\" value=\"{$v}\"{$checked}>";
     }
 
     return $ret;
@@ -134,7 +134,7 @@ class FormTagBinder {
       if(is_int($label)) $label = $v;
       $checked = in_array($v, $vals) ? " checked" : "";
 
-      $ret[$label] = "<input type=\"checkbox\" name=\"{$name}[]\" value=\"{$v}\"{$checked}>";
+      $ret[$label] = "<input type=\"checkbox\" id=\"input-{$name}\" name=\"{$name}[]\" value=\"{$v}\"{$checked}>";
     }
 
     return $ret;
