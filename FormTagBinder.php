@@ -16,7 +16,7 @@ class FormTagBinder {
       return isset($this->data->$key) ? $this->data->$key : $default;
     }
 
-    return false;
+    return $default;
   }
 
   public function input($type, $name, $props=[]){
