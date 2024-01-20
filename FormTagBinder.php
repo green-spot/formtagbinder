@@ -120,7 +120,7 @@ class FormTagBinder {
       $checked = $v === $val ? " checked" : "";
 
       $ret[$label] = "<input type=\"radio\" id=\"input-{$name}-{$i}\" name=\"{$name}\" value=\"{$v}\"{$checked}>";
-      $i++
+      $i++;
     }
 
     return $ret;
@@ -137,7 +137,7 @@ class FormTagBinder {
       $checked = in_array($v, $vals) ? " checked" : "";
 
       $ret[$label] = "<input type=\"checkbox\" id=\"input-{$name}-{$i}\" name=\"{$name}[]\" value=\"{$v}\"{$checked}>";
-      $i++
+      $i++;
     }
 
     return $ret;
