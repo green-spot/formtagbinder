@@ -19,6 +19,10 @@ class FormTagBinder {
     return $default;
   }
 
+  public function has($key){
+    return !!$this->el($key);
+  }
+
   public function input($type, $name, $props=[]){
     $val = htmlspecialchars($this->el($name, ""));
     $props_string = $this->propsString($props);
