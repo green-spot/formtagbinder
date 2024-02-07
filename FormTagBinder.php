@@ -9,7 +9,7 @@ class FormTagBinder {
     $this->data = $data;
   }
 
-  private function el($key, $default=null){
+  protected function el($key, $default=null){
     if(is_array($this->data)){
       return isset($this->data[$key]) ? $this->data[$key] : $default;
     }else if(is_object($this->data)){
