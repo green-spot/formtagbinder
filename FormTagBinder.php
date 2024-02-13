@@ -1,6 +1,6 @@
 <?php
 
-namespace FormTagBinder;
+namespace GreenSpot\Utils;
 
 class FormTagBinder {
   private $data;

@@ -5,7 +5,7 @@ $ composer require green-spot/formtagbinder
 ---
 
 ```php
-$binder = new FormTagBinder\FormTagBinder();
+$binder = new GreenSpot\Utils\FormTagBinder();
 
 echo $binder->text("name");
 // <input type="text" name="name" value="">
@@ -32,7 +32,7 @@ $postdata = [
   "email" => "in.green.spot@gmail.com",
   "categories" => ["b", "c"]
 ];
-$binder = new FormTagBinder\FormTagBinder($postdata);
+$binder = new GreenSpot\Utils\FormTagBinder($postdata);
 
 echo $binder->text("name");
 // <input type="text" name="name" value="yamashita">
